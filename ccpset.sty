@@ -85,13 +85,12 @@
 % Define a command to include professor name in the header
 \newcommand{\prof}[1]{\gdef\@prof{#1}}
 
+\renewcommand{\and}{\linebreak}
 % and define a new title setup
 \pretitle{\begin{flushright}\LARGE}
 \posttitle{\par\end{flushright}}
-\preauthor{\begin{flushright}
-\large \lineskip 0.5em%
-\begin{tabular}[t]{c}}
-\postauthor{\end{tabular}\par\@prof\par\end{flushright}}
+\preauthor{\begin{flushright} \large \lineskip 0.5em}
+\postauthor{\par\@prof\par\end{flushright}}
 \predate{\begin{flushright}\large}
 \postdate{\par\end{flushright}}
 
