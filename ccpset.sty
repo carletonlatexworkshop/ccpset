@@ -85,12 +85,20 @@
 % Define a command to include professor name in the header
 \newcommand{\prof}[1]{\gdef\@prof{#1}}
 
+% And another for the course
+\newcommand{\course}[1]{\gdef\@course{#1}}
+
+% Reconfigure \and to just break a line
 \renewcommand{\and}{\linebreak}
+
 % and define a new title setup
 \pretitle{\begin{flushright}\LARGE}
 \posttitle{\par\end{flushright}}
-\preauthor{\begin{flushright} \large \lineskip 0.5em}
-\postauthor{\par\@prof\par\end{flushright}}
+\preauthor{\begin{flushright} \large}
+\postauthor{\end{flushright}
+  \begin{flushright}
+    \@prof\par\@course\par
+  \end{flushright}}
 \predate{\begin{flushright}\large}
 \postdate{\par\end{flushright}}
 
