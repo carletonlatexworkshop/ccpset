@@ -1,0 +1,73 @@
+% Example for Carleton problem sets
+% Author: Andrew Gainer-Dewar, 20131
+\documentclass[twoside]{article}
+\usepackage{ccpset}
+
+% The Latin Modern font is a modernized replacement for the classic
+% Computer Modern. Feel free to replace this with a different font package.
+\usepackage{lmodern}
+
+% These commands tell the ccpset package about your document.
+% They are used to set up the header.
+\title{Example problem set}
+\author{Lori T.~Jeremiah \and Ray B.~Langstrom} % The \and command handles putting the names on separate lines.
+\date{February 31, 2014}
+\prof{Professor M.~Holmes}
+\course{HIST-314: History of Magic}
+
+\begin{document}
+% Calling \maketitle tells the package to print out the title using
+% the information you configured above.
+\maketitle{}
+
+% Use of sections is optional.
+% If you don't want to have them, just omit lines like these.
+\section*{Chapter 4}
+
+% The pset environment creates a list and configures the
+% \problem{} and \exercise{} commands.
+% All your problems should be inside a pset environment, but
+% you can have more than one if you need to.
+\begin{pset}
+  % And here's where the fun begins.
+  % For each problem, use a \problem{} command, with the problem number
+  % as an argument. (You can also use the \exercise{} command, which just
+  % uses the word "Exercise" instead of "Problem".)
+  \problem{2(a)}
+  % If you want to include the problem statement, you can do so using the
+  % statement environment.
+  \begin{statement}
+    Prove that there are infinitely many primes numbers.
+  \end{statement}
+  % The proof environment can be used to format solutions that are proofs.
+  % This example also demonstrates the use of inline math.
+  \begin{proof}
+    Suppose that $\mathbf{p} = \cbrac{p_{1}, p_{2}, \dots, p_{n}}$ is a finite set of primes.
+    Then $1 + \prod_{i = 1}^{n} p_{i} = 1 + p_{1} p_{2} \cdots p_{n}$ is not divisible by any $p_{i}$, so there is a prime not in $\mathbf{p}$.
+    Thus, no finite set contains all primes.
+  \end{proof}
+
+  % If you don't want to type up the problem statement, you can just dive right in!
+  \problem{17.2}
+  It follows from Theorem 2.7.14-a that
+  % Here, we'll use an align* environment to set several equations without numbers.
+  \begin{align*}
+  \sin A \cos B &= \frac{1}{2} \pbrac*{\sin \pbrac*{A-B} + \sin \pbrac*{A+B}}, \\
+  \sin A \sin B &= \frac{1}{2} \pbrac*{\sin \pbrac*{A-B} + \cos \pbrac*{A+B}}, \\
+  \intertext{and finally that} % The \intertext{} command inserts paragraph text into multiline display math
+  \cos A \cos B &= \frac{1}{2} \pbrac*{\cos \pbrac*{A-B} + \cos \pbrac*{A+B}}.
+\end{align*}
+\end{pset}
+
+\section*{Worksheet 4}
+% If you start a new section, it needs to be *outside* the pset environment,
+% due to complications with the way LaTeX handles lists.
+\begin{pset}
+  \exercise{19}
+  We can conclude the following:
+  % The theorem-like environments all work in problem sets, in case you need them.
+  \begin{theorem*}
+    There are $2^{\binom{n}{2}}$ labeled graphs on $n$ vertices.
+  \end{theorem*}
+\end{pset}
+\end{document}
